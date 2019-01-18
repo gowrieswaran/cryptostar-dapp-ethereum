@@ -1,0 +1,26 @@
+h2 {
+  text-align: center;
+  color: grey;
+}
+form {
+  margin: 0 auto;
+  width: 500px;
+  padding: 1em;
+  border: 1px solid #222;
+  border-radius: 1em;
+}
+p {
+  margin: 5px;
+  padding: 0;
+}
+h3 {
+  text-align: center;
+  margin: 0;
+  padding: 0 10px;
+}
+#createStar {
+  margin: 10px;
+}
+#idinput {
+  margin-right: 20px;
+}

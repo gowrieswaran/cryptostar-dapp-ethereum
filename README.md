@@ -1,1 +1,1 @@
-# cryptostar-dapp-ethereum
+# Decentralized Star Notary Service - Starter Code
