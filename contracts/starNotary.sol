@@ -1,8 +1,6 @@
 pragma solidity ^0.4.24;
 
-//import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
 import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
-
 
 contract StarNotary is ERC721 {
 
@@ -29,7 +27,9 @@ contract StarNotary is ERC721 {
 // Add a function lookUptokenIdToStarInfo, that looks up the stars using the Token ID, and then returns the name of the star.
 
      function lookUptokenIdToStarInfo(uint256 _tokenId) public view returns(string) {
-      return tokenIdToStarInfo[_tokenId].name;
+
+        return tokenIdToStarInfo[_tokenId].name;
+        
     } 
 
     function putStarUpForSale(uint256 _tokenId, uint256 _price) public {
@@ -60,16 +60,14 @@ contract StarNotary is ERC721 {
 //Do not worry about the price, just write code to exchange stars between users.
 
     function exchangeStars(uint256 _tokenId1, uint256 _tokenId2) public {
+        
         address owner1 = ownerOf(_tokenId1);
         address owner2 = ownerOf(_tokenId2);
-    //    require(ownerOf(_tokenId1) == msg.sender);
-        approve(owner2, _tokenId1);
-        transferStar(owner2, _tokenId1);
-    //    require(ownerOf(_tokenId2) == msg.sender);
-        approve(owner1, _tokenId2);
-        transferStar(owner1, _tokenId2);
-
-       
+        _removeTokenFrom(owner1, _tokenId1);
+        _addTokenTo(owner2, _tokenId1);
+        _removeTokenFrom(owner2, _tokenId2);
+        _addTokenTo(owner1, _tokenId2);
+     
     }   
 
 
