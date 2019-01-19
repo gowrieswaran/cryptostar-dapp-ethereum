@@ -28,6 +28,9 @@ The boilerplate code is available at: https://github.com/udacity/boilerPlateDAPP
 3.For starting the development console, run: 'truffle develop`
 
 4.Compile and test the contract using `compile` and `test`
+
+![compile success](https://github.com/gowrieswaran/cryptostar-dapp-ethereum/blob/master/screenshots/compile-success.PNG)
+
 ![test case success](https://github.com/gowrieswaran/cryptostar-dapp-ethereum/blob/master/screenshots/test-success.PNG)
 
 5.Once it successfully passes all the test migrate it to the rinkeby network using
