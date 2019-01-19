@@ -24,6 +24,7 @@ const createStar = async () => {
   const id = document.getElementById("starId").value;
   await instance.createStar(name, id, { from: account });
   console.log("New Star Owner is " + account + ".");
+  //event.preventDefault();
   App.setStatus("New Star Owner is " + account + ".");
 };
 
@@ -32,10 +33,9 @@ const tokenIdToStarInfo = async () => {
   const instance = await StarNotary.deployed();
   const id = document.getElementById("tokenId").value;
   let name = await instance.lookUptokenIdToStarInfo(id, { from: account });
-  App.setTokenName("Name of the star is " + name + ".");
-  console.log("Name of the star is " + name + ".");
+  App.setStatus("Name of the Star is " + name + ".");
+  console.log("Name of the Star is " + name + ".");
 };
-//
 
 const App = {
   start: function() {
@@ -64,20 +64,20 @@ const App = {
   },
 
   setStatus: function(message) {
-    const status = document.getElementById("showOwner");
+    const status = document.getElementById("status");
     status.innerHTML = message;
   },
 
-  setTokenName: function(message) {
-    const starInfo = document.getElementById("showTokenName");
-    starInfo.innerHTML = message;
-  },
   createStar: function() {
     createStar();
   },
 
   tokenIdToStarInfo: function() {
     tokenIdToStarInfo();
+  },
+
+  transferStar: function() {
+    transferStar();
   }
 };
 
@@ -85,6 +85,7 @@ window.App = App;
 
 window.addEventListener("load", function() {
   // Checking if Web3 has been injected by the browser (Mist/MetaMask)
+  event.preventDefault();
   if (typeof web3 !== "undefined") {
     console.warn(
       "Using web3 detected from external source." +
