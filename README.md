@@ -1,6 +1,6 @@
 # Build CryptoStar Dapp on Ethereum
 
-This project involves devoloping a Dapp on Ethereum network. OpenZeppelin library is used to create the ERC721 token and put them on public Ethereum Networks.
+This project involves creating a Dapp on Ethereum network. OpenZeppelin library is used to create the ERC721 token and put them on public Ethereum Networks.
 
 ## Tools required
 
