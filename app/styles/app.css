@@ -2,25 +2,66 @@ h2 {
   text-align: center;
   color: grey;
 }
-form {
-  margin: 0 auto;
-  width: 500px;
-  padding: 1em;
-  border: 1px solid #222;
-  border-radius: 1em;
-}
-p {
-  margin: 5px;
-  padding: 0;
-}
 h3 {
   text-align: center;
-  margin: 0;
-  padding: 0 10px;
+}
+#span {
+  margin: 0 auto;
+  font-size: 20px;
+  font-weight: bold;
+  width: 600px;
 }
 #createStar {
-  margin: 10px;
+  margin: 20px 0;
 }
 #idinput {
   margin-right: 20px;
+}
+button {
+  background-color: rgba(19, 142, 190, 0.856);
+  font-size: 14px;
+  padding: 6px 10px;
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
+}
+.container {
+  padding: 1em;
+  /* border: 1px solid #222;
+  border-radius: 1em; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+#create,
+#lookup,
+#transfer {
+  background-color: #f2f2f2;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border: 1px solid rgb(175, 172, 172);
+  width: 250px;
+  margin: 5px;
+  padding: 10px;
+  align-content: center;
+}
+input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type="text"]:focus {
+  border: 2px solid rgba(60, 191, 243, 0.856);
+}
+label {
+  font-weight: bold;
+}
+#lookUpStar {
+  margin: 20px 0;
 }
