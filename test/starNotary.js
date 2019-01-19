@@ -78,11 +78,6 @@ it("lets user2 buy a star and decreases its balance in ether", async () => {
   assert.equal(finalValue, starPrice);
 });
 
-// Write Tests for:
-
-// 1) The token name and token symbol are added properly.
-// 2) 2 users can exchange their stars.
-// 3) Stars Tokens can be transferred from one address to another.
 it("lets users add symbol and token to a star", async () => {
   let instance = await StarNotary.deployed();
   let getTokenName = await instance.name();
@@ -95,17 +90,13 @@ it("lets user1 and user2 to exchange their stars", async () => {
   let instance = await StarNotary.deployed();
   let user1 = accounts[0];
   let user2 = accounts[1];
-  let tokenId1 = 25;
-  let tokenId2 = 27;
-  await instance.createStar("Star1", tokenId1, { from: user2 });
-  await instance.createStar("Star2", tokenId2, { from: user1 });  
-  let newOwner1 = await instance.getOwner(tokenId1);
-  console.log(newOwner1);
+  let tokenId1 = 7;
+  let tokenId2 = 8;
+  await instance.createStar("Star1", tokenId1, { from: user1 });
   await instance.createStar("Star2", tokenId2, { from: user2 });
-  let newOwner2 = await instance.getOwner(tokenId2);
-  console.log(newOwner2);
-
   await instance.exchangeStars(tokenId1, tokenId2);
+  assert.equal(await instance.getOwner(tokenId2), user1);
+  assert.equal(await instance.getOwner(tokenId1), user2);
 });
 
 it("lets user1 to transfer stars to user2", async () => {
@@ -115,6 +106,5 @@ it("lets user1 to transfer stars to user2", async () => {
   let user2 = accounts[1];
   await instance.createStar("Awesome Star!", tokenId, { from: user1 });
   await instance.transferStar(user2, tokenId, { from: user1 });
-  // let newOwner = await instance.getOwner(tokenId);
   assert.equal(await instance.getOwner(tokenId), user2);
 });
