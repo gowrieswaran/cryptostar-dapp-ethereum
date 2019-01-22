@@ -15,8 +15,8 @@ module.exports = {
     rinkeby: {
       provider: function() {
         return new HDWalletProvider(
-          "decide much group parade abuse write practice empty loan defy remind pole",
-          "https://rinkeby.infura.io/v3/0905903070d342ee8011e7ebefe36611"
+          "mnemonic",
+          "infura_key"
         );
       },
       network_id: "4",
